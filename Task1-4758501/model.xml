@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendposition" value="570,245"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="Data upload">
+			<description>
+				In many Projects uploading data files
+				are a common progress when it comes to change
+				your profile picture on a social media site,
+				send a document to a friend or etc. .
+				They have all common sub features but also changes.
+			</description>
+			<graphics key="collapsed" value="false"/>
+			<or mandatory="true" name="Supported Datatypes">
+				<description>
+					You have to specify which data types are supported
+					to down/upload. For example when you want to
+					make an Avatar for facebook,
+					you cannot upload a pdf.
+				</description>
+				<graphics key="collapsed" value="false"/>
+				<feature name="pdf">
+					<description>Common document format</description>
+				</feature>
+				<feature name="png">
+					<description>Common picture format</description>
+				</feature>
+				<feature name="csv">
+					<description>Common table format</description>
+				</feature>
+				<feature name="jpeg">
+					<description>
+						Common picture format
+					</description>
+				</feature>
+				<feature name="mp drei">
+					<description>mp3 is a common audio format</description>
+				</feature>
+			</or>
+			<alt mandatory="true" name="Multi/Single Data">
+			<description>
+				In many upload/download components
+				you can choose one file or more files.
+				For example you can just upload one profile picture
+				but can send multiple documents as an email.
+			</description>
+			<feature name="Formdata">
+				<description>Is used to upload a single File.</description>
+			</feature>
+			<feature name="Multipart Formdata">
+				<description>Is used to upload multiple files at once.</description>
+			</feature>
+		</alt>
+		<or mandatory="true" name="Decoding">
+			<description>
+				Decoding is an important part when it comes to
+				decode text files or images. Which decode type is used
+				depence on the language.
+			</description>
+			<feature name="ASCII">
+				<description>
+					Used for global encoding
+					(without special chars like ä, ö ü).
+				</description>
+			</feature>
+			<feature name="UTF acht">
+				<description>Used more for german encoding because of german umlauts.</description>
+			</feature>
+			<feature name="Base">
+				<description>Base64 is a image decode/encoder</description>
+			</feature>
+			<feature name="Audio codec">
+				<description>Is a common encoder for audio files</description>
+			</feature>
+		</or>
+	</and>
+</struct>
+<constraints>
+	<rule>
+		<imp>
+			<var>mp drei</var>
+			<var>Audio codec</var>
+		</imp>
+	</rule>
+	<rule>
+		<imp>
+			<disj>
+				<var>jpeg</var>
+				<var>png</var>
+			</disj>
+			<var>Base</var>
+		</imp>
+	</rule>
+	<rule>
+		<imp>
+			<disj>
+				<var>csv</var>
+				<var>pdf</var>
+			</disj>
+			<disj>
+				<var>UTF acht</var>
+				<var>ASCII</var>
+			</disj>
+		</imp>
+	</rule>
+</constraints>
+</featureModel>
