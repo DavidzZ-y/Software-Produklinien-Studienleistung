@@ -1,0 +1,14 @@
+true
+mp_drei=Light_Green
+Audio_codec=Light_Green
+Multi_Single_Data=NO_COLOR
+csv=Red
+png=Orange
+ASCII=Red
+Supported_Datatypes=NO_COLOR
+UTF_acht=Red
+Base=Orange
+pdf=Red
+Formdata=Magenta
+Multipart_Formdata=Pink
+jpeg=Orange

@@ -1,0 +1,4 @@
+Ich hatte einige Naming Fehler im model.xml, ich durfte keine Leerzeichen 
+oder / verwenden. Außerdem waren in den Konfigurationsdateinamen "-", 
+welche auch nicht erlaubt waren. Nachdem das gefixt wurde, lief alles ganz gut. Ab und zu hatte ich
+Fehler in den Logikoperatoren, welche aber gefixt wurden. Alle 5 Konfigurationen laufen einwandfrei.
