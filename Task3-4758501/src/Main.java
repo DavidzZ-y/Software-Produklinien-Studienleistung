@@ -66,9 +66,15 @@ public class Main {
 
 				
 		if (fc.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
+			//#if Multipart_Formdata
 			for (int i = 0;i < fc.getSelectedFiles().length; i++) {
 				System.out.println(fc.getSelectedFiles()[i]);
 			}
+			//#endif
+			
+			//#if Formdata
+//@			System.out.println(fc.getSelectedFile());
+			//#endif
 		}
 	}
 
