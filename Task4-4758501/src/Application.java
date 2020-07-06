@@ -45,12 +45,12 @@ public class Application {
 			fc.addChoosableFileFilter(filter);
 	    }
 				
-		//set MultiSelectionPlugin information
+		//set MultiSelectionPlugins
 		for(MultiSelectionPluginInterface plugin: msPlugins) {
 			fc.setMultiSelectionEnabled(plugin.getMultiSelectionValue());
 		}
 		
-		//get OutputṔlugin information
+		//set OutputṔlugins 
 		if (fc.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
 			for(OutputPluginInterface plugin: outputPlugins) {
 				plugin.getOutput(fc);

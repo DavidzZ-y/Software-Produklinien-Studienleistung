@@ -7,40 +7,40 @@ public class UploadStarter {
 	
 		List<FilterPluginInterface> filterPlugins = new ArrayList<FilterPluginInterface>();
 		//#if csv 
-		filterPlugins.add(new CsvPlugin());
+//@		filterPlugins.add(new CsvPlugin());
 		//#endif
 		//#if jpeg 
-		filterPlugins.add(new JpegPlugin());
+//@		filterPlugins.add(new JpegPlugin());
 		//#endif
 		//#if mp_drei 
 		filterPlugins.add(new Mp3Plugin());
 		//#endif
 		//#if pdf
-		filterPlugins.add(new PdfPlugin());
+//@		filterPlugins.add(new PdfPlugin());
 		//#endif
 		//#if png
-		filterPlugins.add(new PngPlugin());
+//@		filterPlugins.add(new PngPlugin());
 		//#endif
 		
 		List<MultiSelectionPluginInterface> msPlugins= new ArrayList<MultiSelectionPluginInterface>();
 		//#if Formdata
-//@		msPlugins.add(new SingleSelectPlugin());
+		msPlugins.add(new SingleSelectPlugin());
 		//#endif
 		//#if Multipart_Formdata	
-		msPlugins.add(new MultiSelectPlugin());
+//@		msPlugins.add(new MultiSelectPlugin());
 		//#endif
 		
 		List<OutputPluginInterface> outputPlugins= new ArrayList<OutputPluginInterface>();
 		//#if Output && Multipart_Formdata
-		outputPlugins.add(new MultiOutputPlugin());
+//@		outputPlugins.add(new MultiOutputPlugin());
 		//#endif
 	    //#if Output && Formdata
-//@		outputPlugins.add(new SingleOutputPlugin());
+		outputPlugins.add(new SingleOutputPlugin());
 		//#endif
 		
 		Application uploader = new Application(
-				filterPlugins, //Plugin which specifies if multiple file upload is allowed or not 
-				msPlugins,         //Plugin which specifies the input data type
-				outputPlugins);        //Plugin which gives a console output after upload 
+				filterPlugins, 
+				msPlugins,         
+				outputPlugins);       
 	}
 }
