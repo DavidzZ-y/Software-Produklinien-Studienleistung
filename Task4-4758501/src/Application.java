@@ -3,6 +3,9 @@ import properties.PropertyManager;
 
 
 import javax.swing.JFileChooser;
+
+import java.util.List;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -10,25 +13,25 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Application {
-    private MultiSelectionPlugin multiSelectionPlugin;
-    private FilterPlugin filterPlugin;
-    private OutputPlugin outputPlugin;
+    private List<FilterPluginInterface> filterPlugins ;
+    private List<MultiSelectionPluginInterface> msPlugins;
+    private List<OutputPluginInterface> outputPlugins;
     
     private JFileChooser fc = new JFileChooser();
     private JButton open = new JButton();
     	
-    public Application(MultiSelectionPlugin p1, FilterPlugin p2, OutputPlugin p3) throws Exception {
-    	multiSelectionPlugin = p1;
-    	filterPlugin = p2;
-    	outputPlugin = p3;	
-    	if (multiSelectionPlugin != null) {
-    		multiSelectionPlugin.setApplication(this);
+    public Application(List<FilterPluginInterface> filterPlugins,
+    		List<MultiSelectionPluginInterface> msPlugins,
+    		List<OutputPluginInterface >outputPlugins) throws Exception {
+    
+    	if(filterPlugins != null) {
+    		this.filterPlugins = filterPlugins;
     	}
-    	if (filterPlugin != null) {
-    		filterPlugin.setApplication(this);
+    	if(msPlugins != null) {
+    		this.msPlugins = msPlugins;
     	}
-    	if (outputPlugin != null) {
-    		outputPlugin.setApplication(this);
+    	if(outputPlugins != null) {
+    		this.outputPlugins = outputPlugins;
     	}
     	validate();
     	init();
@@ -36,23 +39,21 @@ public class Application {
 	protected void init() throws Exception {
 		startConfig();
 		
-		//get MultiSelectionPlugin information
-		if (multiSelectionPlugin != null) {
-		fc.setMultiSelectionEnabled(multiSelectionPlugin.getMultiSelectionValue());
-		}
-		
-		//get FilterPlugin information
-		if (filterPlugin != null) {
-			FileNameExtensionFilter[] filter = (filterPlugin.getFilterArguments());
-			for(int i = 0; i< filter.length; i++) {
-				fc.addChoosableFileFilter(filter[i]);
-			}
+		//set FilterPlugins 
+		for(FilterPluginInterface plugin: filterPlugins) {
+			FileNameExtensionFilter filter = plugin.getFilterArgument();
+			fc.addChoosableFileFilter(filter);
+	    }
+				
+		//set MultiSelectionPlugin information
+		for(MultiSelectionPluginInterface plugin: msPlugins) {
+			fc.setMultiSelectionEnabled(plugin.getMultiSelectionValue());
 		}
 		
 		//get OutputṔlugin information
 		if (fc.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
-			if (outputPlugin != null) {
-				outputPlugin.getOutput(fc);
+			for(OutputPluginInterface plugin: outputPlugins) {
+				plugin.getOutput(fc);
 			}
 		}
 	}
