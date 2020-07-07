@@ -7,19 +7,19 @@ public class UploadStarter {
 	
 		List<FilterPluginInterface> filterPlugins = new ArrayList<FilterPluginInterface>();
 		//#if csv 
-//@		filterPlugins.add(new CsvPlugin());
+		filterPlugins.add(new CsvPlugin());
 		//#endif
 		//#if jpeg 
-//@		filterPlugins.add(new JpegPlugin());
+		filterPlugins.add(new JpegPlugin());
 		//#endif
 		//#if mp_drei 
-		filterPlugins.add(new Mp3Plugin());
+//@		filterPlugins.add(new Mp3Plugin());
 		//#endif
 		//#if pdf
 //@		filterPlugins.add(new PdfPlugin());
 		//#endif
 		//#if png
-//@		filterPlugins.add(new PngPlugin());
+		filterPlugins.add(new PngPlugin());
 		//#endif
 		
 		List<MultiSelectionPluginInterface> msPlugins= new ArrayList<MultiSelectionPluginInterface>();

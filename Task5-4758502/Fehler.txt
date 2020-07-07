@@ -1,0 +1,1 @@
+Leider hat sich mein Ubuntu 18.04 mit FeatureHouse sehr oft aufgehängt, fast jedes zweite mal beim Zwischenspeichern.

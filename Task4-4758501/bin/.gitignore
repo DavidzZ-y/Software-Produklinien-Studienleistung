@@ -1,0 +1,16 @@
+/Application.class
+/CsvPlugin.class
+/FilterPluginInterface.class
+/JpegPlugin.class
+/Mp3Plugin.class
+/MultiOutputPlugin.class
+/MultiSelectPlugin.class
+/MultiSelectionPluginInterface.class
+/OutputPluginInterface.class
+/PdfPlugin.class
+/PngPlugin.class
+/SingleOutputPlugin.class
+/SingleSelectPlugin.class
+/UploadStarter.class
+/properties/
+/runtime.properties

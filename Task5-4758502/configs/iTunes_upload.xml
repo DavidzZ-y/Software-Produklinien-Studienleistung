@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Data_upload"/>
+	<feature automatic="selected" name="Supported_Datatypes"/>
+	<feature name="pdf"/>
+	<feature name="png"/>
+	<feature name="csv"/>
+	<feature name="jpeg"/>
+	<feature manual="selected" name="mp_drei"/>
+	<feature automatic="selected" name="Multi_Single_Data"/>
+	<feature manual="selected" name="Formdata"/>
+	<feature automatic="unselected" name="Multipart_Formdata"/>
+	<feature automatic="selected" name="Decoding"/>
+	<feature name="ASCII"/>
+	<feature name="UTF_acht"/>
+	<feature name="Base"/>
+	<feature automatic="selected" name="Audio_codec"/>
+	<feature manual="selected" name="Output"/>
+	<feature name="Single_file_output"/>
+	<feature name="Multi_file_output"/>
+</configuration>
