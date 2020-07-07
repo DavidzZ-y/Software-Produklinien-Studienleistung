@@ -24,7 +24,4 @@ public class data_upload {
 			output();
 		}
 	}
-    void output() {
-    	System.out.println("aasas");
-    }
 }

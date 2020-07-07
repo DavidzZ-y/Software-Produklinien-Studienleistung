@@ -1,1 +1,3 @@
-Leider hat sich mein Ubuntu 18.04 mit FeatureHouse sehr oft aufgehängt, fast jedes zweite mal beim Zwischenspeichern.
+Leider hat sich mein Ubuntu 18.04 mit FeatureHouse sehr oft aufgehängt, fast jedes mal beim Zwischenspeichern.
+Je mehr Features ich implementiert hatte, desto öfter stürzte es ab. Das war einfach nur frustrierend. Hätte gerne mehr gemacht,
+aber anscheinend ist FeautureHouse nicht für Linux gemacht.

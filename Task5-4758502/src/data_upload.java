@@ -43,17 +43,6 @@ class  data_upload {
     }
 
 	
-     private void  output__wrappee__Data_upload  () {
-    	System.out.println("aasas");
-    }
-
-	
-	void output() {
-		output__wrappee__Data_upload();
-		System.out.println("Folgende Dateien wurden hochgeladen:");
-	}
-
-	
     
      private void  addFilter__wrappee__Supported_Datatypes  () {
     	
@@ -107,6 +96,19 @@ class  data_upload {
 	
 	void uploadAmount  () {
 		fc.setMultiSelectionEnabled(true);
+	}
+
+	
+	 private void  output__wrappee__Output  () {
+		System.out.println("Folgende Dateien wurden hochgeladen:");
+	}
+
+	
+	void output() {
+		output__wrappee__Output();
+		for (int i = 0;i < fc.getSelectedFiles().length; i++) {
+			System.out.println(fc.getSelectedFiles()[i]);
+		}
 	}
 
 

@@ -3,7 +3,7 @@
  */
 class data_upload {
 	void output() {
-		orignal();
+		original();
 		System.out.println(fc.getSelectedFile());
 	}
 }

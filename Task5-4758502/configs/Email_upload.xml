@@ -17,5 +17,5 @@
 	<feature automatic="selected" name="Audio_codec"/>
 	<feature manual="selected" name="Output"/>
 	<feature name="Single_file_output"/>
-	<feature name="Multi_file_output"/>
+	<feature automatic="selected" name="Multi_file_output"/>
 </configuration>
